@@ -1,12 +1,12 @@
 import RegistryPage from "../../page";
 
-type types = {
-    parameters: {
+type PageProps = {
+    params: {
         registryId: string;
         giftId: string;
     };
 };
 
-export default function GiftPage({ parameters }: types) {
-    return <RegistryPage parameters={parameters} />;
+export default function GiftPage({ params }: PageProps) {
+    return <RegistryPage params={params} />;
 }
