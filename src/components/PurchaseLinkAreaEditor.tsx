@@ -21,10 +21,6 @@ export default function PurchaseLinkAreaEditor({
 }: LinkAreaProps) {
     const userInfo = useSelf((me) => me.info);
 
-    if (!userInfo) {
-        return;
-    }
-
     const editor = useEditor({
         extensions: [
             StarterKit.configure({
@@ -40,7 +36,7 @@ export default function PurchaseLinkAreaEditor({
             }),
             CollaborationCursor.configure({
                 provider,
-                user: userInfo,
+                user: userInfo || undefined,
             }),
             Link.configure({ openOnClick: true }),
         ],
